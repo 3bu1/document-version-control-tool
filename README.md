@@ -129,3 +129,24 @@ If the user making the request does not have the required permissions to access 
 
 The DB architecture we choosed will lead to more space usage. This can be handled by saving diff of the document in another collection. 
 This will lead to conflicts. We can implement push mechanism to let user know that value has changed and ask him to resolve conflicts. Eventually we will end up builing a proper version control tool. Thanks.
+
+## Test Results
+ ```
+ PASS  tests/integration/user.test.js (5.755 s)
+ 
+ PASS  tests/integration/auth.test.js
+ 
+ PASS  tests/integration/object.test.js
+ 
+ PASS  tests/unit/models/user.model.test.js
+```
+
+Test Suites: 4 passed, 4 total
+
+Tests:       76 passed, 76 total
+
+Snapshots:   0 total
+
+Time:        11.705 s
+
+Ran all test suites.
