@@ -131,22 +131,15 @@ If the user making the request does not have the required permissions to access 
 
  ```
  PASS  tests/integration/user.test.js (5.755 s)
- 
- PASS  tests/integration/auth.test.js
- 
- PASS  tests/integration/object.test.js
- 
+ PASS  tests/integration/auth.test.js 
+ PASS  tests/integration/object.test.js 
  PASS  tests/unit/models/user.model.test.js
 ```
 
 Test Suites: 4 passed, 4 total
-
 Tests:       76 passed, 76 total
-
 Snapshots:   0 total
-
 Time:        11.705 s
-
 Ran all test suites.
 
 ### npm run coverage
