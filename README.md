@@ -125,11 +125,6 @@ The permissions are role-based. You can view the permissions/rights of each role
 
 If the user making the request does not have the required permissions to access this route, a Forbidden (403) error is thrown.
 
-## Drawbacks in the tool
-
-The DB architecture we choosed will lead to more space usage. This can be handled by saving diff of the document in another collection. 
-This will lead to conflicts. We can implement push mechanism to let user know that value has changed and ask him to resolve conflicts. Eventually we will end up builing a proper version control tool. Thanks.
-
 ## Test Results
 
 ### npm run test
@@ -219,4 +214,10 @@ Tests:       76 passed, 76 total
 Snapshots:   0 total
 Time:        9.868 s, estimated 12 s
 Ran all test suites.
+
+
+## Drawbacks in the tool
+
+The DB architecture we choosed will lead to more space usage. This can be handled by saving diff of the document in another collection. 
+This will lead to conflicts. We can implement push mechanism to let user know that value has changed and ask him to resolve conflicts. Eventually we will end up builing a proper version control tool. Thanks.
 
