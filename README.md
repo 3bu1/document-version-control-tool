@@ -135,13 +135,13 @@ If the user making the request does not have the required permissions to access 
  PASS  tests/integration/object.test.js 
  PASS  tests/unit/models/user.model.test.js
 ```
-
+```
 Test Suites: 4 passed, 4 total
 Tests:       76 passed, 76 total
 Snapshots:   0 total
 Time:        11.705 s
 Ran all test suites.
-
+```
 ### npm run coverage
 
 ```
@@ -202,12 +202,13 @@ All files              |   88.52 |    74.19 |   88.24 |   88.51 |
   user.validation.js   |     100 |      100 |     100 |     100 |                   
 -----------------------|---------|----------|---------|---------|-------------------
 
+```
 Test Suites: 4 passed, 4 total
 Tests:       76 passed, 76 total
 Snapshots:   0 total
 Time:        9.868 s, estimated 12 s
 Ran all test suites.
-
+```
 
 ## Drawbacks in the tool
 
