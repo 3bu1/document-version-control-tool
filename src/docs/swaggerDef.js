@@ -17,5 +17,4 @@ const swaggerDef = {
     },
   ],
 };
-console.log("swaggerDef ",swaggerDef);
 module.exports = swaggerDef;
