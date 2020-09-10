@@ -1,5 +1,103 @@
 ## Getting Started
 
+## Test Results
+
+### npm run test
+
+ ```
+ PASS  tests/integration/user.test.js (5.755 s)
+ PASS  tests/integration/auth.test.js 
+ PASS  tests/integration/object.test.js 
+ PASS  tests/unit/models/user.model.test.js
+```
+```
+Test Suites: 4 passed, 4 total
+Tests:       76 passed, 76 total
+Snapshots:   0 total
+Time:        11.705 s
+Ran all test suites.
+```
+### npm run coverage
+
+```
+> document-version-control-tool@1.0.0 coverage /home/ubuntu/document-version-control-tool
+> jest -i --coverage
+
+ PASS  tests/integration/user.test.js
+ PASS  tests/integration/object.test.js
+ PASS  tests/integration/auth.test.js
+ PASS  tests/unit/models/user.model.test.js
+ ```
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |   88.52 |    74.19 |   88.24 |   88.51 |                   
+ controllers           |   91.67 |       50 |      90 |   91.67 |                   
+  auth.controller.js   |     100 |      100 |     100 |     100 |                   
+  object.controller.js |   77.27 |       25 |   66.67 |   77.27 | 18,24-28          
+  user.controller.js   |     100 |      100 |     100 |     100 |                   
+ docs                  |     100 |      100 |     100 |     100 |                   
+  swaggerDef.js        |     100 |      100 |     100 |     100 |                   
+ middlewares           |   90.63 |    66.67 |     100 |   89.83 |                   
+  auth.js              |     100 |      100 |     100 |     100 |                   
+  error.js             |   72.73 |    35.71 |     100 |   72.73 | 9-11,20-21,33     
+  rateLimiter.js       |     100 |      100 |     100 |     100 |                   
+  validate.js          |     100 |      100 |     100 |     100 |                   
+ models                |     100 |      100 |     100 |     100 |                   
+  index.js             |     100 |      100 |     100 |     100 |                   
+  object.model.js      |     100 |      100 |     100 |     100 |                   
+  token.model.js       |     100 |      100 |     100 |     100 |                   
+  user.model.js        |     100 |      100 |     100 |     100 |                   
+ models/plugins        |   94.12 |     87.5 |     100 |   94.12 |                   
+  index.js             |     100 |      100 |     100 |     100 |                   
+  paginate.plugin.js   |     100 |      100 |     100 |     100 |                   
+  toJSON.plugin.js     |   86.67 |       75 |     100 |   86.67 | 11,28             
+ routes/v1             |     100 |      100 |     100 |     100 |                   
+  auth.route.js        |     100 |      100 |     100 |     100 |                   
+  docs.route.js        |     100 |      100 |     100 |     100 |                   
+  index.js             |     100 |      100 |     100 |     100 |                   
+  object.route.js      |     100 |      100 |     100 |     100 |                   
+  user.route.js        |     100 |      100 |     100 |     100 |                   
+ services              |   76.44 |    62.79 |   69.57 |   76.74 |                   
+  auth.service.js      |   41.18 |       40 |      25 |   41.18 | 27-31,40-49,60-69 
+  email.service.js     |   53.85 |      100 |       0 |   53.85 | 22-23,33-39       
+  index.js             |     100 |      100 |     100 |     100 |                   
+  object.service.js    |   94.64 |    64.71 |     100 |    96.3 | 83,86             
+  token.service.js     |   65.71 |    33.33 |      60 |   65.71 | 52-57,91-98       
+  user.service.js      |     100 |      100 |     100 |     100 |                   
+ utils                 |   95.45 |     87.5 |     100 |      95 |                   
+  ApiError.js          |   85.71 |       75 |     100 |   85.71 | 7                 
+  catchAsync.js        |     100 |      100 |     100 |     100 |                   
+  helpers.js           |     100 |      100 |     100 |     100 |                   
+  pick.js              |     100 |      100 |     100 |     100 |                   
+ validations           |     100 |      100 |     100 |     100 |                   
+  auth.validation.js   |     100 |      100 |     100 |     100 |                   
+  custom.validation.js |     100 |      100 |     100 |     100 |                   
+  object.validation.js |     100 |      100 |     100 |     100 |                   
+  user.validation.js   |     100 |      100 |     100 |     100 |                   
+-----------------------|---------|----------|---------|---------|-------------------
+
+```
+Test Suites: 4 passed, 4 total
+Tests:       76 passed, 76 total
+Snapshots:   0 total
+Time:        9.868 s, estimated 12 s
+Ran all test suites.
+```
+
+## Database Structure
+
+![Database Structure](https://photos.google.com/search/_tra_/photo/AF1QipMPbfzRT8fgF0HNtcXwmZZYAYL0f_ySUVSJYBGZ)
+
+## Drawbacks in the tool
+
+The DB architecture we choosed will lead to more space usage in case of long strings. 
+This can be handled by saving diff of the document in another collection. 
+This will lead to conflicts. 
+We can implement push mechanism to let user know that value has changed and ask him to resolve conflicts. 
+Eventually we will end up builing a proper version control tool.
+
+
 ### Installation
 
 Clone the repo:
@@ -124,94 +222,3 @@ An authenticated user can access this route only if that user has the `manageUse
 The permissions are role-based. You can view the permissions/rights of each role in the `src/config/roles.js` file.
 
 If the user making the request does not have the required permissions to access this route, a Forbidden (403) error is thrown.
-
-## Test Results
-
-### npm run test
-
- ```
- PASS  tests/integration/user.test.js (5.755 s)
- PASS  tests/integration/auth.test.js 
- PASS  tests/integration/object.test.js 
- PASS  tests/unit/models/user.model.test.js
-```
-```
-Test Suites: 4 passed, 4 total
-Tests:       76 passed, 76 total
-Snapshots:   0 total
-Time:        11.705 s
-Ran all test suites.
-```
-### npm run coverage
-
-```
-> document-version-control-tool@1.0.0 coverage /home/ubuntu/document-version-control-tool
-> jest -i --coverage
-
- PASS  tests/integration/user.test.js
- PASS  tests/integration/object.test.js
- PASS  tests/integration/auth.test.js
- PASS  tests/unit/models/user.model.test.js
- ```
------------------------|---------|----------|---------|---------|-------------------
-File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
------------------------|---------|----------|---------|---------|-------------------
-All files              |   88.52 |    74.19 |   88.24 |   88.51 |                   
- controllers           |   91.67 |       50 |      90 |   91.67 |                   
-  auth.controller.js   |     100 |      100 |     100 |     100 |                   
-  object.controller.js |   77.27 |       25 |   66.67 |   77.27 | 18,24-28          
-  user.controller.js   |     100 |      100 |     100 |     100 |                   
- docs                  |     100 |      100 |     100 |     100 |                   
-  swaggerDef.js        |     100 |      100 |     100 |     100 |                   
- middlewares           |   90.63 |    66.67 |     100 |   89.83 |                   
-  auth.js              |     100 |      100 |     100 |     100 |                   
-  error.js             |   72.73 |    35.71 |     100 |   72.73 | 9-11,20-21,33     
-  rateLimiter.js       |     100 |      100 |     100 |     100 |                   
-  validate.js          |     100 |      100 |     100 |     100 |                   
- models                |     100 |      100 |     100 |     100 |                   
-  index.js             |     100 |      100 |     100 |     100 |                   
-  object.model.js      |     100 |      100 |     100 |     100 |                   
-  token.model.js       |     100 |      100 |     100 |     100 |                   
-  user.model.js        |     100 |      100 |     100 |     100 |                   
- models/plugins        |   94.12 |     87.5 |     100 |   94.12 |                   
-  index.js             |     100 |      100 |     100 |     100 |                   
-  paginate.plugin.js   |     100 |      100 |     100 |     100 |                   
-  toJSON.plugin.js     |   86.67 |       75 |     100 |   86.67 | 11,28             
- routes/v1             |     100 |      100 |     100 |     100 |                   
-  auth.route.js        |     100 |      100 |     100 |     100 |                   
-  docs.route.js        |     100 |      100 |     100 |     100 |                   
-  index.js             |     100 |      100 |     100 |     100 |                   
-  object.route.js      |     100 |      100 |     100 |     100 |                   
-  user.route.js        |     100 |      100 |     100 |     100 |                   
- services              |   76.44 |    62.79 |   69.57 |   76.74 |                   
-  auth.service.js      |   41.18 |       40 |      25 |   41.18 | 27-31,40-49,60-69 
-  email.service.js     |   53.85 |      100 |       0 |   53.85 | 22-23,33-39       
-  index.js             |     100 |      100 |     100 |     100 |                   
-  object.service.js    |   94.64 |    64.71 |     100 |    96.3 | 83,86             
-  token.service.js     |   65.71 |    33.33 |      60 |   65.71 | 52-57,91-98       
-  user.service.js      |     100 |      100 |     100 |     100 |                   
- utils                 |   95.45 |     87.5 |     100 |      95 |                   
-  ApiError.js          |   85.71 |       75 |     100 |   85.71 | 7                 
-  catchAsync.js        |     100 |      100 |     100 |     100 |                   
-  helpers.js           |     100 |      100 |     100 |     100 |                   
-  pick.js              |     100 |      100 |     100 |     100 |                   
- validations           |     100 |      100 |     100 |     100 |                   
-  auth.validation.js   |     100 |      100 |     100 |     100 |                   
-  custom.validation.js |     100 |      100 |     100 |     100 |                   
-  object.validation.js |     100 |      100 |     100 |     100 |                   
-  user.validation.js   |     100 |      100 |     100 |     100 |                   
------------------------|---------|----------|---------|---------|-------------------
-
-```
-Test Suites: 4 passed, 4 total
-Tests:       76 passed, 76 total
-Snapshots:   0 total
-Time:        9.868 s, estimated 12 s
-Ran all test suites.
-```
-
-## Drawbacks in the tool
-
-The DB architecture we choosed will lead to more space usage. This can be handled by saving diff of the document in another collection. 
-This will lead to conflicts. We can implement push mechanism to let user know that value has changed and ask him to resolve conflicts. Eventually we will end up builing a proper version control tool. Thanks.
-
