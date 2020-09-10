@@ -87,15 +87,15 @@ Ran all test suites.
 
 ## Database Structure
 
-![Database Structure](https://photos.google.com/search/_tra_/photo/AF1QipMPbfzRT8fgF0HNtcXwmZZYAYL0f_ySUVSJYBGZ)
+![Database Structure](https://lh3.googleusercontent.com/H1NuqKXjwjC513gbEUBs67APTVeGRRD3t_1vADiXDPOxG7c6UkweNfpKQB4-oVHQ9L4a5DSDqOMIQiGVQW83Jtu6Pa25JzawxgbjJW5XlyJx8DthoG6vwyXvdyg5u8-vu0LtUFFZW2kgKvibKUwzBLahpRQyKnNM0H8Q6RybNHe_rVesj-mQgDJiVkJm7y_JhA1GARJSsyp7pAzpR2dogAawfLnFq_BU2FEF0R9ffV4UcqBT6NAmYzIyMBstzRUMI3yjqvcKZC4hu1jLNurrLO_5Imk0hGDTZXiyqCC_d-B_3LuNuqMxHC3YA62LTCK8GU6C3jludCiah5HpfZzynezN1x7JQG1zWp5ozVbSl5iy7rb-KCKcj05xJ726j8tGQXBPs_YBWPqtSHmMgBbF7QQvqQ1iM5cZLeniuxctJVKQ1sWevrP6lMr9-PITyVJemK-M9cKdn69_IRZLb-T4DCv9fx8xloQpOalbKtQ8SQlBhclD-WdRGs8_n0qTP8iMs9pPAvsRyFCS8-qmtoWBjuyJvgPThU51wYEYouDLulLp6zHe6Ys6pOKT8nlAMuv8XoNQ7LtnzEU0cGkC62RIe6EEK7kcc81LJpbfrhNhx7TRRXO7uFcAQlMiotd1e3qOMlDgMp9dGWALDnDiqXhOaWCDu79TjjK54XhF4Til9tuwAEtPT30REIQ2J_4ulw=w1008-h89-no?authuser=0)
 
 ## Drawbacks in the tool
 
-The DB architecture we choosed will lead to more space usage in case of long strings. 
-This can be handled by saving diff of the document in another collection. 
-This will lead to conflicts. 
-We can implement push mechanism to let user know that value has changed and ask him to resolve conflicts. 
-Eventually we will end up builing a proper version control tool.
+* Above DB architecture will lead to more space usage in case of long strings. 
+* This can be handled by saving diff of the document in another collection. 
+* This will lead to conflicts. 
+* We can implement push mechanism to let user know that value has changed and ask him to resolve conflicts. 
+* Eventually we will end up builing a proper version control tool.
 
 
 ### Installation
